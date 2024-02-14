@@ -1,0 +1,103 @@
+mql5
+//+------------------------------------------------------------------+
+//|                                                   TickScalper.mq5 |
+//|                        Developed by Forex Robot Easy Team                |
+//|                                        www.forexroboteasy.com       |
+//+------------------------------------------------------------------+
+#property copyright 'Forex Robot Easy Team'
+#property link      'www.forexroboteasy.com'
+
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+   // Add indicator code here
+   return(INIT_SUCCEEDED);
+}
+
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+   // Add tick processing code here
+   bool buySignal = CheckBuySignal();
+   bool sellSignal = CheckSellSignal();
+   
+   if (buySignal){
+      Print('Buy Signal - Enter long position');
+      DisplayBuySignal();
+   }
+   
+   if (sellSignal){
+      Print('Sell Signal - Enter short position');
+      DisplaySellSignal();
+   }
+}
+
+//+------------------------------------------------------------------+
+//| Custom function to check buy signal                              |
+//+------------------------------------------------------------------+
+bool CheckBuySignal()
+{
+   // Add buy signal logic here
+   return true; // Placeholder value, replace with actual logic
+}
+
+//+------------------------------------------------------------------+
+//| Custom function to check sell signal                             |
+//+------------------------------------------------------------------+
+bool CheckSellSignal()
+{
+   // Add sell signal logic here
+   return true; // Placeholder value, replace with actual logic
+}
+
+//+------------------------------------------------------------------+
+//| Custom function to display buy signal on control panel            |
+//+------------------------------------------------------------------+
+void DisplayBuySignal()
+{
+   // Add code to display buy signal on control panel here
+   Print('Displaying Buy Signal');
+   // Example code to display green ▲ Pow inscription
+   Print('▲ Pow');
+}
+
+//+------------------------------------------------------------------+
+//| Custom function to display sell signal on control panel           |
+//+------------------------------------------------------------------+
+void DisplaySellSignal()
+{
+   // Add code to display sell signal on control panel here
+   Print('Displaying Sell Signal');
+   // Example code to display ▼ Pow inscription
+   Print('▼ Pow');
+}
+
+//+------------------------------------------------------------------+
+//| Custom function to execute trade based on buy signal              |
+//+------------------------------------------------------------------+
+void EnterLongPosition()
+{
+   // Add code to enter long position here
+   Print('Entering Long Position');
+}
+
+//+------------------------------------------------------------------+
+//| Custom function to execute trade based on sell signal             |
+//+------------------------------------------------------------------+
+void EnterShortPosition()
+{
+   // Add code to enter short position here
+   Print('Entering Short Position');
+}
+
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+   // Add deinitialization code here
+}
